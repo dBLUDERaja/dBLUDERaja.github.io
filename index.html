@@ -248,16 +248,133 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Legalitas Section - Desain Clone Referensi */
+        .legalitas {
+            padding: 5rem 5%;
+            background-color: #d9d9d9;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .legalitas-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 800px;
+            margin: 0 auto 5rem auto;
+            border-bottom: 6px solid #0099ff;
+            padding-bottom: 15px;
+            width: fit-content;
+        }
+
+        .legalitas-header-icon {
+            background-color: #ff7b00;
+            color: white;
+            font-size: 2.2rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 4px solid #0099ff;
+            margin-right: 20px;
+        }
+
+        .legalitas-header-container h3 {
+            font-size: 3rem;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 
+                -2px -2px 0 #ff7b00,  
+                 2px -2px 0 #ff7b00,
+                -2px  2px 0 #ff7b00,
+                 2px  2px 0 #ff7b00,
+                 4px  4px 0 rgba(0,0,0,0.2);
+        }
+
+        .legalitas-grid {
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .legal-card-wrapper {
+            position: relative;
+            width: 360px;
+            margin-top: 50px; 
+        }
+
+        .legal-logo-box {
+            position: absolute;
+            top: -55px;
+            left: -40px;
+            background: white;
+            padding: 5px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            border: 1px solid #ccc;
+            z-index: 2;
+        }
+
+        .legal-logo-box img {
+            height: 100px;
+            width: 130px;
+            object-fit: contain;
+        }
+
+        .legal-content-box {
+            padding: 3rem 1.5rem 2rem 5rem;
+            text-align: left;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.4), inset -2px -2px 5px rgba(0,0,0,0.1), inset 2px 2px 5px rgba(255,255,255,0.2);
+        }
+
+        .nib-bg {
+            background-color: #0073c4;
+            color: white;
+            border: 2px solid #005a9c;
+        }
+
+        .halal-bg {
+            background-color: #b05c5c;
+            color: white;
+            border: 2px solid #8c4747;
+        }
+
+        .legal-content-box ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+        
+        .legal-content-box ul li {
+            margin-bottom: 0.3rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
         /* Order Form Section */
         .order-section {
             padding: 5rem 5%;
-            background-color: var(--light);
+            background-color: white;
         }
 
         .form-container {
             max-width: 600px;
             margin: 0 auto;
-            background: white;
+            background: var(--light);
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -312,7 +429,8 @@
             margin: 2.5rem 0;
             display: flex;
             justify-content: center;
-            gap: 4rem;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
 
         .social-item {
@@ -349,6 +467,9 @@
             header { flex-direction: column; gap: 1rem; }
             .form-container { padding: 1.5rem; }
             .social-links { gap: 2rem; }
+            .legalitas-grid { flex-direction: column; gap: 4rem; align-items: center; }
+            .legal-logo-box { left: 10px; }
+            .legal-content-box { padding-left: 2rem; padding-top: 4rem; }
         }
     </style>
 </head>
@@ -359,13 +480,13 @@
             <img src="images/favicon.png" alt="Logo dBLUDERaja" class="logo-img">
             <h1>dBLUDERaja</h1>
         </a>
-        <a href="#pemesanan" class="btn btn-primary" style="padding: 0.5rem 1rem;">Format Pemesanan</a>
+        <a href="#pemesanan" class="btn btn-primary" style="padding: 0.5rem 1rem;">Hubungi Kami</a>
     </header>
 
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">🍞 Roti Bluder & Kue Pilihan</div>
-            <h2>Lembutnya Bluder,<br>Dibuat untuk <span>Dinikmati.</span></h2>
+            <h2>Lembutnya Bluder,<br>Dibuat untuk Dinikmati.</span></h2>
             <p>Nikmati roti bluder dan aneka kue pilihan Dbluderaja, dibuat dengan bahan premium, higienis, sehat, halal, dan tanpa BTP.</p>
             <div class="btn-group">
                 <a href="#pemesanan" class="btn btn-primary">Pesan via WhatsApp</a>
@@ -427,6 +548,46 @@
         </div>
     </section>
 
+    <!-- Legalitas Section -->
+    <section class="legalitas">
+        <div class="legalitas-header-container">
+            <div class="legalitas-header-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h3>LEGALITAS</h3>
+        </div>
+        <div class="legalitas-grid">
+            
+            <!-- NIB Card -->
+            <div class="legal-card-wrapper">
+                <div class="legal-logo-box">
+                    <!-- Gunakan error fallback ke logo standar publik jika file lokal Anda belum terunggah -->
+                    <img src="images/nib.png" alt="Logo NIB" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Garuda_Pancasila_Coat_of_Arms_of_Indonesia.svg/150px-Garuda_Pancasila_Coat_of_Arms_of_Indonesia.svg.png'">
+                </div>
+                <div class="legal-content-box nib-bg">
+                    <ul>
+                        <li>2802230001948</li>
+                        <li>0403230005958</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Halal Card -->
+            <div class="legal-card-wrapper">
+                <div class="legal-logo-box">
+                    <img src="images/halal.png" alt="Logo Halal Indonesia" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Halal_Indonesia_Logo.svg/150px-Halal_Indonesia_Logo.svg.png'">
+                </div>
+                <div class="legal-content-box halal-bg">
+                    <ul>
+                        <li>ID35110002269090323</li>
+                        <li>ID35110002061490323</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="order-section" id="pemesanan">
         <div class="form-container">
             <h3>Format Pemesanan</h3>
@@ -457,6 +618,14 @@
             <a href="https://instagram.com/dbluderaja" target="_blank" class="social-item">
                 <i class="fa-brands fa-instagram"></i>
                 <span>@dbluderaja</span>
+            </a>
+            <a href="https://threads.net/@dbluderaja" target="_blank" class="social-item">
+                <i class="fa-brands fa-threads"></i>
+                <span>@dbluderaja</span>
+            </a>
+            <a href="https://facebook.com/dbluderaja" target="_blank" class="social-item">
+                <i class="fa-brands fa-facebook"></i>
+                <span>dBLUDERaja</span>
             </a>
             <a href="https://wa.me/6281233052057?text=Halo%20Admin%20dBLUDERaja,%20saya%20tertarik%20dengan%20produk%20Anda%20dan%20ingin%20bertanya%20lebih%20lanjut." target="_blank" class="social-item">
                 <i class="fa-brands fa-whatsapp"></i>
