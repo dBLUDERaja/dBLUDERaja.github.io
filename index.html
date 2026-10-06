@@ -316,16 +316,20 @@
             position: absolute;
             top: -55px;
             left: -40px;
-            background: white;
-            padding: 5px;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-            border: 1px solid #ccc;
+            background: #ffffff;
+            padding: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            border: 2px solid #ffffff;
+            border-radius: 6px;
             z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .legal-logo-box img {
-            height: 100px;
-            width: 130px;
+            height: 85px;
+            width: 110px;
             object-fit: contain;
         }
 
@@ -336,6 +340,7 @@
             display: flex;
             align-items: center;
             box-shadow: 4px 4px 10px rgba(0,0,0,0.4), inset -2px -2px 5px rgba(0,0,0,0.1), inset 2px 2px 5px rgba(255,255,255,0.2);
+            border-radius: 4px;
         }
 
         .nib-bg {
@@ -486,7 +491,7 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">🍞 Roti Bluder & Kue Pilihan</div>
-            <h2>Lembutnya Bluder,<br>Dibuat untuk Dinikmati.</span></h2>
+            <h2>Lembutnya Bluder,<br>Dibuat untuk Dinikmati.</span>
             <p>Nikmati roti bluder dan aneka kue pilihan Dbluderaja, dibuat dengan bahan premium, higienis, sehat, halal, dan tanpa BTP.</p>
             <div class="btn-group">
                 <a href="#pemesanan" class="btn btn-primary">Pesan via WhatsApp</a>
@@ -561,8 +566,7 @@
             <!-- NIB Card -->
             <div class="legal-card-wrapper">
                 <div class="legal-logo-box">
-                    <!-- Gunakan error fallback ke logo standar publik jika file lokal Anda belum terunggah -->
-                    <img src="images/nib.png" alt="Logo NIB" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Garuda_Pancasila_Coat_of_Arms_of_Indonesia.svg/150px-Garuda_Pancasila_Coat_of_Arms_of_Indonesia.svg.png'">
+                    <img src="images/nib.jpg" alt="Logo NIB">
                 </div>
                 <div class="legal-content-box nib-bg">
                     <ul>
@@ -575,7 +579,7 @@
             <!-- Halal Card -->
             <div class="legal-card-wrapper">
                 <div class="legal-logo-box">
-                    <img src="images/halal.png" alt="Logo Halal Indonesia" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Halal_Indonesia_Logo.svg/150px-Halal_Indonesia_Logo.svg.png'">
+                    <img src="images/halal.png" alt="Logo Halal Indonesia">
                 </div>
                 <div class="legal-content-box halal-bg">
                     <ul>
