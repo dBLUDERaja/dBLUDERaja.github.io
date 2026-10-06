@@ -8,7 +8,7 @@
     <meta name="keywords" content="Dbluderaja, bluder, roti bluder, roti premium, bakery, cookies, kue kering">
     <meta name="author" content="Dbluderaja">
     
-    <!-- Favicon -->
+    <!-- Favicon untuk Tab Browser -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <style>
@@ -32,6 +32,7 @@
             line-height: 1.6;
         }
 
+        /* Header & Logo */
         header {
             background-color: var(--dark);
             color: white;
@@ -39,6 +40,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
         }
 
         header h1 {
@@ -46,9 +65,10 @@
             color: var(--primary);
             letter-spacing: 1px;
             font-weight: 800;
+            margin: 0;
         }
 
-        /* Hero Section - Diperbaiki url gambarnya */
+        /* Hero Section */
         .hero {
             position: relative;
             height: 80vh;
@@ -101,6 +121,7 @@
             opacity: 0.9;
         }
 
+        /* Buttons */
         .btn-group {
             display: flex;
             gap: 1rem;
@@ -112,6 +133,9 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
@@ -132,6 +156,7 @@
             background-color: #f3f4f6;
         }
 
+        /* About Section */
         .about {
             padding: 5rem 5%;
             display: flex;
@@ -167,6 +192,7 @@
             font-size: 1.1rem;
         }
 
+        /* Products Section */
         .products {
             background-color: white;
             padding: 5rem 5%;
@@ -219,6 +245,59 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Order Form Section */
+        .order-section {
+            padding: 5rem 5%;
+            background-color: var(--light);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h3 {
+            font-size: 2rem;
+            font-family: Georgia, serif;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .form-container p {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
@@ -226,23 +305,47 @@
             padding: 3rem 5%;
         }
 
+        .social-links {
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
         footer p {
             opacity: 0.7;
             font-size: 0.9rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h2 { font-size: 2.5rem; }
             .about { flex-direction: column; text-align: center; gap: 2rem; }
             .btn-group { flex-direction: column; }
+            header { flex-direction: column; gap: 1rem; }
+            .form-container { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>dBLUDERaja</h1>
-        <a href="https://wa.me/6281233052057" class="btn btn-primary" style="padding: 0.5rem 1rem;">Hubungi Kami</a>
+        <a href="index.html" class="logo-container">
+            <img src="images/favicon.png" alt="Logo dBLUDERaja" class="logo-img">
+            <h1>dBLUDERaja</h1>
+        </a>
+        <a href="#pemesanan" class="btn btn-primary" style="padding: 0.5rem 1rem;">Format Pemesanan</a>
     </header>
 
     <section class="hero">
@@ -251,8 +354,8 @@
             <h2>Lembutnya Bluder,<br>Dibuat untuk <span>Dinikmati.</span></h2>
             <p>Nikmati roti bluder dan aneka kue pilihan Dbluderaja, dibuat dengan bahan premium, higienis, sehat, halal, dan tanpa BTP.</p>
             <div class="btn-group">
-                <a href="https://wa.me/6281233052057" class="btn btn-primary">Pesan via WhatsApp</a>
-                <a href="#" class="btn btn-secondary">Kunjungi Shopee</a>
+                <a href="#pemesanan" class="btn btn-primary">Pesan via WhatsApp</a>
+                <a href="https://shopee.co.id" class="btn btn-secondary">Kunjungi Shopee</a>
             </div>
         </div>
     </section>
@@ -310,11 +413,56 @@
         </div>
     </section>
 
+    <!-- Bagian Format Pemesanan Terintegrasi WhatsApp -->
+    <section class="order-section" id="pemesanan">
+        <div class="form-container">
+            <h3>Format Pemesanan</h3>
+            <p>Isi form berikut, pesanan akan otomatis diteruskan ke WhatsApp Admin.</p>
+            <form id="orderForm" onsubmit="kirimWA(event)">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" class="form-control" required placeholder="Contoh: Budi Santoso">
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat Pengiriman</label>
+                    <textarea id="alamat" class="form-control" rows="3" required placeholder="Detail alamat pengiriman..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pesanan">Detail Pesanan</label>
+                    <textarea id="pesanan" class="form-control" rows="4" required placeholder="Contoh:&#10;2 Box Bluder Premium&#10;1 Toples Nastar"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 1.1rem; padding: 1rem;">Kirim Pesanan via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
-        <h2 style="font-family: Georgia, serif; margin-bottom: 1rem;">dBLUDERaja</h2>
+        <h2 style="font-family: Georgia, serif; margin-bottom: 0.5rem;">dBLUDERaja</h2>
         <p>Jl. Kahuripan AC – 5 Lingk. Sumberdandang, Kel. Kebonsari, Jember 68122 | #kebanggaanjember</p>
+        
+        <div class="social-links">
+            <a href="https://instagram.com/dbluderaja" target="_blank">Instagram: @dbluderaja</a>
+            <a href="https://wa.me/6281233052057" target="_blank">WhatsApp: 0812 3305 2057</a>
+        </div>
+
         <p style="margin-top: 1.5rem;">&copy; 2026 dBLUDERaja. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Script untuk mengambil data form dan generate link WhatsApp
+        function kirimWA(event) {
+            event.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const alamat = document.getElementById('alamat').value;
+            const pesanan = document.getElementById('pesanan').value;
+            
+            const text = `Halo Admin dBLUDERaja, saya ingin memesan:\n\n*Nama:* ${nama}\n*Alamat Pengiriman:* ${alamat}\n*Detail Pesanan:*\n${pesanan}`;
+            const encodedText = encodeURIComponent(text);
+            const targetWA = "6281233052057";
+            const url = `https://wa.me/${targetWA}?text=${encodedText}`;
+            
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
